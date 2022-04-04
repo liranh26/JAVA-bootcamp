@@ -7,51 +7,88 @@ public class Runner {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		// ******** question 1 - calculate area & circumference for a given radius ********
-//		
-//		System.out.println("please enter a radius:");
-//		float radius = scanner.nextFloat();
-//		
-//		float pai = 3.14f;
-//		float circ = 2 * pai * radius;
-//		float area = radius * radius * pai;
-//		System.out.printf("For given redius: %.2f the circumference is: %.2f and the area is: %.2f",radius ,circ , area);
-//		
 
-		// ******** question 2 - calculating a toast price ********
+		//*** lesson q3 - switch & case ***
+		System.out.println("Enter a year: ");
+		int year = scanner.nextInt();
 		
-//		int basicPrice = 12;
-//		System.out.println("Regualar aditions: olives, mushrumos, corn");
-//		System.out.println("please enter the amount of Regualar aditions to your toast:");
-//		int regualarAditions = scanner.nextInt();
-//		
-//		System.out.println("Regualar aditions: bulgarian cheese, extra cheese");
-//		System.out.println("please enter the amount of Special aditions to your toast:");
-//		int specialAditions = scanner.nextInt();
-//		
-//		int totalPrice = basicPrice + regualarAditions * 2 + specialAditions * 3;
-//		
-//		System.out.println("Your bill for the toast is:" + totalPrice);
-
+		System.out.println("Enter a month number: ");
+		int month = scanner.nextInt();
 		
-		// ******** question 3 - calculating bill for a sofa including delivery ********
+		int febDays = 28;
+		int leapYear = 2020;
 		
-//		System.out.println("Please enter the amount of the sofa price");
-//		int sofaPrice = scanner.nextInt();
-//		
-//		System.out.println("Please enter the amount of the sofa weight in kg:");
-//		int weight = scanner.nextInt();
-//		
-//		System.out.println("Please enter the distance you live in km:");
-//		int distance = scanner.nextInt();
-//		
-//		System.out.println("Please enter your apartment floor:");
-//		int floor = scanner.nextInt();
-//		
-//		double totalPrice = sofaPrice + distance*5 + floor*weight + sofaPrice*0.1;
-//		System.out.println("The total amount of the sofa is: "+ totalPrice);
+		if(year % 4 == 0) {
+			febDays = 29;
+		}
+		
+		if(year < 0) {
+			System.out.println("Invalid year value!");
+			return; // or else
+		}
+		
+		String result = "";
+		
+		switch(month) {
+		
+		case 1: 
+			result = "January " + year + " has 31 days";
+			break;
+			
+		case 2: 
+			result = "February " + year + " has "+ febDays + " days";
+			break;
+			
+		case 3: 
+			result = "March " + year + " has 31 days";
+			break;
+			
+		case 4: 
+			result = "April " + year + " has 30 days";
+			break;	
+			
+		case 5: 
+			result = "May " + year + " has 31 days";
+			break;
+			
+		case 6: 
+			result = "June " + year + " has 30 days";
+			break;
+			
+		case 7: 
+			result = "July " + year + " has 31 days";
+			break;
+			
+		case 8: 
+			result = "August " + year + " has 31 days";
+			break;
+			
+		case 9: 
+			result = "September " + year + " has 30 days";
+			break;
+			
+		case 10: 
+			result = "October " + year + " has 31 days";
+			break;
+			
+		case 11: 
+			result = "November " + year + " has 30 days";
+			break;
+		case 12: 
+			result = "December " + year + " has 31 days";
+			break;
+			
+		default:
+			result = "Invalid month value!";
+		}
+		
+		
+		System.out.println(result);
+		
 		
 		scanner.close();
+
+
 	}
 
 }
