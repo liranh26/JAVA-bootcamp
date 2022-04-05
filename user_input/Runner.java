@@ -109,6 +109,9 @@ public class Runner {
 //		System.out.println("Your bill for the toast is:" + totalPrice);
 
 		
+		
+		
+		
 //		// ******** question 3 - calculating bill for a sofa including delivery ********
 //		
 //		System.out.println("Please enter the amount of the sofa price");
@@ -125,6 +128,10 @@ public class Runner {
 //		
 //		double totalPrice = sofaPrice + distance*5 + floor*weight + sofaPrice*0.1;
 //		System.out.println("The total amount of the sofa is: "+ totalPrice);
+		
+		
+		
+		
 		
 		
 		// **lesson q1.1 check is a number dividable by 1 2 3 4**
