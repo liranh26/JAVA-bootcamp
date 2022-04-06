@@ -292,6 +292,29 @@ public class Runner {
 	}
 	
 	
+	
+	//***** H.W. ex 4.11 *****
+	public static void murblePuzzle(String puzzle, char zero, char x,int spaceIndex) {
+		boolean isDone=false;
+		while(isDone) {
+			//game plan
+			//if 2 left = x -> jump right ->start over
+			//if 2 right = o -> jump left ->start over
+			//if both sides x -> swap right -> start over
+			//if both sidex 0 -> swap left -> start over
+			
+			
+			if(puzzle.charAt(spaceIndex-2)==x) {
+				
+			}
+			
+			
+		}
+
+	}
+	
+	
+//	public static print 
 
 }
 
