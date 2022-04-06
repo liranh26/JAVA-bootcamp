@@ -8,10 +8,6 @@ public class Runner {
 
 		Scanner scanner = new Scanner(System.in);
 
-
-
-
-
 //		// ******** H.W ex.3.3 - calculating check for wedding *********//
 //		
 //		int familyRate = 1000, friendRate = 500, minAmount = 250, check=0;
@@ -239,9 +235,6 @@ public class Runner {
 //		
 //		System.out.println(result);
 
-		
-		
-		
 //		//******** Workbook ex.4.12 - stars triangle *********//
 //		int temp;
 //		int input = scanner.nextInt();
@@ -257,9 +250,6 @@ public class Runner {
 //			}
 //		}
 
-		
-		
-		
 //		// ******** Workbook ex.4.14 - stars square *********//
 //		boolean blank=false;
 //		int rowLength, colIndex = 0, blankIndex = 1;
@@ -292,42 +282,40 @@ public class Runner {
 //				
 //		}
 
-		
-//		// ******** Workbook ex.4.16 - *********//   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//		// ******** Workbook ex.4.16 - *********//   
+//
+//		int i = 0, numToCompare, sum, prevNum=0;
+//		int num = 220; // first number
 //		
-//		int numFriends=1;
-//		int sumNum1=1, sumNum2=1;
-//		
-//		while(numFriends!=10) {
-//			
-//			for(int num1=220; ;num1++) {
-//				for(int divider1=2;divider1<num1 ;divider1++) {
-//					if(num1%divider1 == 0) {
-//						sumNum1+=divider1;
-//					}
-//					
-//					for(int num2=220; ;num2++) {
-//						for(int divider2=2;divider2<num2 ;divider2++) {
-//							if(num2%divider2 == 0) {
-//								sumNum2+=divider2;
-//							}
-//						}
-//					}
-//					
+//		while (i < 10) {
+//			numToCompare = 0;
+//			sum = 0;
+//
+//			// find first number dividers
+//			for (int j = 1; j < num; j++) {
+//				if (num % j == 0) {
+//					sum += j;
 //				}
 //			}
 //			
+//			// find the dividers of sum
+//			for (int j = 1; j < sum; j++) {
+//				if (sum % j == 0) {
+//					numToCompare += j;
+//				}
+//			}
 //			
+//			if (num == numToCompare && num != sum && num != prevNum) {
+//				prevNum = sum;
+//				System.out.println("The numbers " + num + " and " + sum + " are friends!");
+//				i++;
+//			}
+//			num++;
+//
 //		}
-
-		
 
 		scanner.close();
 
 	}
 
 }
-
-
-
-
