@@ -72,7 +72,7 @@ public class Runner {
 //		if(temp / 10 == 0) {
 //			month = temp %10;
 //		}else {
-//			month = temp%10 + temp%100;
+//			month = temp%100;
 //		}
 //		
 //		System.out.println("The year is: "+ year + ", the month is "+ month + ", the day is " + day);
