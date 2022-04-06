@@ -44,7 +44,7 @@ public class Runner {
 		System.out.println(maxZeroRectangle(testMatrix));
 	}
 	
-	//***** H.W. ex 4.1 *****
+	//***** H.W. ex 6.1 *****
 	public static int incrementDigitsByOne(int num) {
 		int digit = 1, incermentDigit, result = 0;
 
@@ -61,7 +61,7 @@ public class Runner {
 		return result;
 	}
 	
-	//***** H.W. ex 4.2 *****
+	//***** H.W. ex 6.2 *****
 	public static int checkNumberLength(int num1, int num2) {
 		int result = 0, digit1, digit2, resDigit = 1;
 
@@ -93,7 +93,7 @@ public class Runner {
 			return num1;
 	}
 
-	//***** H.W. ex 4.3 *****
+	//***** H.W. ex 6.3 *****
 	public static boolean isPerfect(int num) {
 		boolean isPerfect=true;
 		int dividersSum=0;
@@ -110,7 +110,7 @@ public class Runner {
 	}
 	
 	
-	//***** H.W. ex 4.4 *****
+	//***** H.W. ex 6.4 *****
 	public static int getSumOfDigits(int num) {
 		int sum=0;
 		while(num!=0) {
@@ -134,7 +134,7 @@ public class Runner {
 	
 	
 	
-	//***** H.W. ex 4.5 *****
+	//***** H.W. ex 6.5 *****
 	public static void printRhombus(int num, char label) {
 		
 		for(int i=0; i<num; i++) {
@@ -162,7 +162,7 @@ public class Runner {
 	}
 	
 	
-	//***** H.W. ex 4.6 *****
+	//***** H.W. ex 6.6 *****
 	public static boolean isMatrixSoduko(int[][] matrix) {
 		boolean isSoduko = true;
 		int sumRow, sumCol;
@@ -182,7 +182,7 @@ public class Runner {
 	}
 	
 	
-	//***** H.W. ex 4.7 *****
+	//***** H.W. ex 6.7 *****
 	public static boolean isMatrixMirrored(int[][] matrix) {
 		boolean isMirrored = true;
 		int Rowlength = matrix[0].length;
@@ -207,7 +207,7 @@ public class Runner {
 	
 	
 	
-	//***** H.W. ex 4.8 *****
+	//***** H.W. ex 6.8 *****
 	public static int[] mergeArrays(int[] arr1, int[] arr2) {
 		
 		int sumArr1 = sumOfArrayCells(arr1);
@@ -251,7 +251,7 @@ public class Runner {
 	}
 	
 	
-	//***** H.W. ex 4.9 *****
+	//***** H.W. ex 6.9 *****
 	public static int maxZeroRectangle(int[][] matrix) {
 		int result=0;
 		for(int i=0;i<matrix.length;i++) {
@@ -293,7 +293,7 @@ public class Runner {
 	
 	
 	
-	//***** H.W. ex 4.11 *****
+	//***** H.W. ex 6.11 *****
 	public static void murblePuzzle(String puzzle, char zero, char x,int spaceIndex) {
 		boolean isDone=false;
 		while(isDone) {
