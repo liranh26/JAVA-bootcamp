@@ -79,11 +79,11 @@ public class Runner {
 	public static int[] newArraySummed(int[] longerArray, int[] shorterArray) {
 		int[] result = new int[longerArray.length];
 		for (int i = 0; i < shorterArray.length; i++) {
-			result[i] += shorterArray[i] + longerArray[i];
+			result[i] = shorterArray[i] + longerArray[i];
 		}
 		
 		for (int i = shorterArray.length; i < longerArray.length ; i++) {
-			result[i] += longerArray[i];
+			result[i] = longerArray[i];
 		}
 		
 		return result;
@@ -109,25 +109,37 @@ public class Runner {
 			shorterArray = arr1;
 		}
 		
-//		arr1[3] = 1000;  // --> changes the original array!
-//		longerArray[2] = 1001; //--> changes the original array!
-		
 		//shallow copy & lossing the original address
-		System.out.println(longerArray);
 		longerArray = newArraySummed(longerArray, shorterArray); //--> NOT changes the original array!
-		System.out.println(longerArray);
-		
+
 		//shallow copy & changing the original array
 		longerArray=arr1;
 		longerArray = summingToLongerArray(longerArray, shorterArray);
-		System.out.println(longerArray);
-//		//shallow copy
-//		arr1 = newArraySummed(longerArray, shorterArray);
-		
-		
 		
 	}
 
 
+	public static int[] concatArr(int[] arr1, int[] arr2) {
+		int concatLength = arr1.length + arr2.length;
+		int[] concatedArr= new int[concatLength];
+		
+		concatedArr = insertValus(concatedArr, arr1, 0);
+		concatedArr = insertValus(concatedArr, arr2, arr1.length);
+		
+		return concatedArr;
+	}
 
+	public static int[] insertValus(int[] arrToInsert, int[] arrTorecieveValues,int startingIndex) {
+		for(int i=startingIndex; i<arrToInsert.length;i++) {
+			arrTorecieveValues[i]=arrToInsert[i];
+		}
+		
+		return arrTorecieveValues;
+	}
+	
+	public static void printArray(int[] arrToPrint) {
+		for (int i = 0; i < arrToPrint.length; i++) {
+			System.out.println(arrToPrint[i]+ " ");
+		}
+	}
 }

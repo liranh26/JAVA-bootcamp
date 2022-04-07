@@ -294,7 +294,7 @@ public class Runner {
 	
 	
 	//***** H.W. ex 6.11 *****
-	public static void murblePuzzle(String puzzle, char zero, char x,int spaceIndex) {
+	public static void murblePuzzle(char[] puzzle, char zero, char x,int spaceIndex) {
 		boolean isDone=false;
 		while(isDone) {
 			//game plan
@@ -303,10 +303,7 @@ public class Runner {
 			//if both sides x -> swap right -> start over
 			//if both sidex 0 -> swap left -> start over
 			
-			
-			if(puzzle.charAt(spaceIndex-2)==x) {
-				
-			}
+
 			
 			
 		}

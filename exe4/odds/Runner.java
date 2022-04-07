@@ -133,9 +133,9 @@ public class Runner {
 //		}
 //		System.out.println("The new number is: "+result);
 
+		
 //		// ******** Workbook ex.4.4 - *********//
 //		
-//
 //		int sumOfNumbers = 0, switcher = -1, input, productWieght = 2, numberToAdd=0, result=0;
 //		System.out.println("Please enter input: ");
 //		input = scanner.nextInt();
@@ -161,25 +161,25 @@ public class Runner {
 
 		// ******** Workbook ex.4.6 - *********//
 
-//		int i,input, notEmpty=0, result=0,numLength=0, digit=1, totalDig;
-//		
-//		System.out.println("Enter a number: ");
-//		input = scanner.nextInt();
-//		notEmpty = input;
-//		
-//		while(notEmpty!=0) {			
-//			digit *= 10;
-//			notEmpty /= 10 ;
-//			numLength++;			
-//		}
-//		
-//		result = digit*input;
-//		
-//		for(i=0; i<numLength;i++) {
-//			digit/=10;
-//			result += (input%10)*digit;
-//			input/=10;
-//		}
+		int i,input, notEmpty=0, result=0,numLength=0, digit=1, totalDig;
+		
+		System.out.println("Enter a number: ");
+		input = scanner.nextInt();
+		notEmpty = input;
+		
+		while(notEmpty!=0) {			
+			digit *= 10;
+			notEmpty /= 10 ;
+			numLength++;			
+		}
+		
+		result = digit*input;
+		
+		for(i=0; i<numLength;i++) {
+			digit/=10;
+			result += (input%10)*digit;
+			input/=10;
+		}
 //		
 //		System.out.println(result);
 
@@ -197,6 +197,7 @@ public class Runner {
 //			}
 //		}
 
+		
 //		// ******** Workbook ex.4.10 - *********//             
 //		int numCopy,result=0,digit=1,resDigit=1,numLength=0,numberToAdd,numberDivided,temp;
 //		System.out.println("Enter a number: ");
@@ -235,6 +236,7 @@ public class Runner {
 //		
 //		System.out.println(result);
 
+		
 //		//******** Workbook ex.4.12 - stars triangle *********//
 //		int temp;
 //		int input = scanner.nextInt();
@@ -250,7 +252,9 @@ public class Runner {
 //			}
 //		}
 
+		
 //		// ******** Workbook ex.4.14 - stars square *********//
+//		
 //		boolean blank=false;
 //		int rowLength, colIndex = 0, blankIndex = 1;
 //		int input = scanner.nextInt();

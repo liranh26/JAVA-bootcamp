@@ -11,8 +11,8 @@ public class Runner {
 		
 		
 		// Question 4 - test
-		int[] testArr1 = {7, 8, -4,8,9};
-		int[] testArr2 = {-5, 7, 3, 2, 40};
+		int[] testArr1 = {7, 8, -4};
+		int[] testArr2 = {-5, 7, 3, 2};
 		int[] concArr = concatedArray(testArr1, testArr2);
 		
 		for (int i = 0; i < concArr.length; i++) {
@@ -80,8 +80,8 @@ public class Runner {
 		}
 		
 		//insert the sum and subtract of summed values
-		concArr[concLength-2] = arr1Sum+arr2Sum;
-		concArr[concLength-1] = Math.abs(arr2Sum-arr2Sum);
+		concArr[concLength-2]=arr1Sum+arr2Sum;
+		concArr[concLength-1]=arr1Sum-arr2Sum;
 		
 		return concArr;
 	}
