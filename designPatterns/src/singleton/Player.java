@@ -2,7 +2,7 @@ package singleton;
 
 import java.util.Random;
 
-public class Player {
+public class Player{
 	String name;
 	private static int id;
 	private static int idcounter=0;
@@ -47,7 +47,10 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", points=" + points + "]";
+		return "Player [name=" + name + ", card=" + card + ", points=" + points + "]";
 	}
+
+
+
 
 }
