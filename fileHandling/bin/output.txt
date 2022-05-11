@@ -1,4 +1,0 @@
-This is the data i want to write!
-Adding dataThis is the data in the output file.
-azbv
-And this is the appended data.
