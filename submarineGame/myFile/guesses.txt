@@ -1,0 +1,3 @@
+Player name=lir, email=lirr, phone=r
+Your points: 990, Your misses: 1, Your hits: 0.
+3 3 m
