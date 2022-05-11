@@ -1,6 +1,6 @@
 package main;
 
-import boards.Game;
+import management.GameManager;
 
 /**
  * @author Liran Hadad
@@ -8,11 +8,12 @@ import boards.Game;
 public class Runner {
 
 	public static void main(String[] args) {
-		Game game = new Game();
+		GameManager game = new GameManager();
 
 		game.play();
 
 		game.reply();
+
 
 	}
 

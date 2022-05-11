@@ -14,7 +14,7 @@ import player.Player;
 /**
  * @author Liran Hadad
  */
-public class ReaderWriterObject {
+public class FileReaderWriter {
 
 	public static void writePlayerToFile(Player player) {
 		try (FileWriter output = new FileWriter("myFile/guesses.txt")) {

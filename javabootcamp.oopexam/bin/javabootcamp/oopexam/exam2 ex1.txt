@@ -1,0 +1,6 @@
+1. Objects are known as Instances in java, an instance is a representation of a class. In practice the instance is used to point about one particular object.
+2. Static binding is resolved at compile time, whether the dynamic is at run time.
+3. Association is a dependency that contains a reference to an object.
+Aggregation is association which have a class that shared by the object.
+Composestion is when there is a hard dependency to another class and it cant run without it.
+4. No, overrigind is based on the dynamic binding at runtime, but static method are bonded to use static binding which occurs at the compile time.

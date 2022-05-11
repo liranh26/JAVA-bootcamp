@@ -6,21 +6,14 @@ import java.time.temporal.ChronoUnit;
 import activity.ActivityData;
 
 public class Account {
-	protected double balance;
 	protected AccountProperties accountProperties;
 	private static int idCounter = 1;
 	private final int ACCOUNT_ID;
 	protected ActivityData[] activityLog;
-	private int logIndex;
 	private final int recordNumOfActivites = 100;
-	protected double feeOperation;
-	protected double interstRate;
-	private LocalDateTime lastWithdrawal;
-	private int dailyWithraw;
-	protected double loanMonthlyPayment;
-	protected int loanLeftMonths;
-	protected LocalDateTime loginFailure;
-	protected int loan;
+	protected double feeOperation, interstRate, loanMonthlyPayment, balance;
+	private LocalDateTime lastWithdrawal, loginFailure;
+	private int dailyWithraw, loanLeftMonths, loan, logIndex;
 
 	/**
 	 * This consturctor takes an account properties and the initial balance of the

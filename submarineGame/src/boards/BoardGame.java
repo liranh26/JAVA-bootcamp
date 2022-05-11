@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.util.Random;
 
 import exceptions.OutOfBoardException;
+import management.GameManager;
 import submarine.Submarine;
 
 public class BoardGame extends Board {
@@ -18,7 +19,7 @@ public class BoardGame extends Board {
 
 	private void getSubmarines() {
 
-		subs = new Submarine[Game.SUBMARINES_NUMBER];
+		subs = new Submarine[GameManager.SUBMARINES_NUMBER];
 		for (int i = 0; i < subs.length; i++) {
 			subs[i] = new Submarine();
 		}
@@ -93,11 +94,11 @@ public class BoardGame extends Board {
 		}
 	}
 
-	protected int getTotalSubsCells(){
+	public int getTotalSubsCells(){
 		return totalSubsCells;
 	}
 
-	protected char getCellValue(int x, int y) {
+	public char getCellValue(int x, int y) {
 		return board[x][y];
 	}
 }

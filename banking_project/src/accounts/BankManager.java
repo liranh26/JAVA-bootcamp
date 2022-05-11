@@ -74,7 +74,7 @@ public class BankManager extends AccountOwner {
 	protected void collectFee(double fee) {
 		account.addToBalance(fee);
 	}
-//
+
 //	/**
 //	 * This method over ride the original method in account owner to add users
 //	 * approval action.

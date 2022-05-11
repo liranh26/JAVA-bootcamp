@@ -355,9 +355,10 @@ public class AppManager {
 		int option = 0;
 		System.out.println("Welcome " + currUser.getFirstName() + " what would you like to do?");
 		while (option != 8) {
-			Menus.actionMenu();
+			
+			printMenuForUser(currUser==bankManager);
 			option = ScannerInputs.getIntFromUser();
-
+			
 			switch (option) {
 			case 1:
 				currUser.checkBalance();
@@ -391,6 +392,13 @@ public class AppManager {
 
 			}
 		}
+	}
+	
+	private void printMenuForUser(boolean bankManager) {
+		if(!bankManager)
+			Menus.actionMenu();
+		else
+			Menus.managerActionMenu();
 	}
 	
 	

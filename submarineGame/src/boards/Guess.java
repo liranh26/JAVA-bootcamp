@@ -17,6 +17,11 @@ public class Guess implements Serializable{
 	public Guess() {
 		initializeGuess();
 	}
+	
+	public Guess(int x, int y) {
+		xCord = x;
+		yCord = y;
+	}
 
 	public int getxCord() {
 		return xCord;
