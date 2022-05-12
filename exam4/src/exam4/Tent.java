@@ -13,8 +13,6 @@ public class Tent {
 		setArea();
 	}
 	
-	
-	
 	private void setArea() {
 		area = width*length;
 	}
