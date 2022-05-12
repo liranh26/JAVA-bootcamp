@@ -5,7 +5,7 @@ public class Tent {
 	protected double width, length, height;
 	double area;
 
-	public Tent(int numPeople, int width, int length, int height) {
+	public Tent(int numPeople, double width, double length, double height) {
 		this.numPeople = numPeople;
 		this.width = width;
 		this.length = length;

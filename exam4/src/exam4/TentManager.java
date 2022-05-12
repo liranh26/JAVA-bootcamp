@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+
 public class TentManager {
 
 	protected ArrayList<Tent> tents;
@@ -15,21 +16,23 @@ public class TentManager {
 	}
 
 	public List<Tent> tentsByArea(List<Tent> tents) {
+		
 		return tents.stream()
-				.sorted((t1, t2) -> (int) (t2.area - t1.area))
+				.sorted( (t1, t2) -> Double.compare(t2.area,t1.area))
 				.collect(Collectors.toList());
 	}
 
 	public List<Tent> sortByPeopleNum(List<Tent> tents, int numPeople) {
-
+		
 		return tents.stream().filter(t -> numPeople <= t.numPeople)
 				.sorted((t1, t2) -> t2.numPeople - t1.numPeople)
 				.collect(Collectors.toList());
 	}
 
 	public boolean isHighest(List<Tent> tents, Tent tent) {
+		
 		return tent.height == tents.stream()
-				.sorted((t1, t2) -> (int) (t2.height - t1.height))
+				.sorted((t1, t2) -> Double.compare(t2.height,t1.height))
 				.collect(Collectors.toList()).get(0).height;
 	}
 
