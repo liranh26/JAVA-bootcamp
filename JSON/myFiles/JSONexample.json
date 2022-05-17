@@ -1,0 +1,45 @@
+{
+	"Students": [
+		{
+			"id": "3000000",
+			"isMale": "true",
+			"firstName": "Liran",
+			"lastName": "Hadad",
+			"notes": [
+				{
+					"id": 11,
+					"to": "Snir",
+					"from": "Liran",
+					"message": "Hola"
+				}
+			]
+		},
+		{
+			"id": "2000000",
+			"isMale": "false",
+			"firstName": "Sapir",
+			"lastName": "Yosefi Hadad",
+			"notes": null
+		},
+		{
+			"id": "3000000",
+			"isMale": "true",
+			"firstName": "Snir",
+			"lastName": "Hadad",
+			"notes": [
+				{
+					"id": 31,
+					"to": "Liran",
+					"from": "Snir",
+					"message": "Hello"
+				},
+				{
+					"id": 32,
+					"to": "Sapir",
+					"from": "Snir",
+					"message": "Hi there"
+				}
+			]
+		}
+	]
+}

@@ -1,47 +1,41 @@
 package command;
 
-import java.time.LocalDateTime;
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HeaterApp {
 
-	protected Deque<Command> history;
+	private final int SHOW_MAX_HISTORY = 5;
+	protected ArrayList<String> history;
 	protected OffCommand off;
 	protected OnCommand on;
-	private final int MAX_WORK_TIME = 90;
 
 	public HeaterApp() {
-		history = new ArrayDeque<>();
-		off = new OffCommand();
-		on = new OnCommand();
+		history = new ArrayList<>();
 	}
 
 	public void turnOn(int workTime) {
-		if (workTime > MAX_WORK_TIME)
-			workTime = 90;
-		on.excute();
-		System.out.println("Heater turned on for" + workTime + "minutes on " + on.excuteTime);
-		addCommand(on);
+		executeCommand(new OnCommand(workTime));
 	}
-	
+
 	public void turnOff() {
-		off.excute();
-		System.out.println("Heater turned off on " + off.excuteTime);
+		executeCommand(new OffCommand());
 	}
 
-	public void addCommand(Command com) {
-		if (history.size() < 5)
-			history.addFirst(com);
-		else {
-			history.addFirst(com);
-			history.pollLast();
-		}
+	private void executeCommand(Command command) {
+		String message = command.excute();
+		System.out.println(message);
+		history.add(message);
+	}
 
+	public void addCommand(String com) {
+		history.add(com);
 	}
 
 	public void showHistory() {
-		System.out.println(history);
-		
+		List<String> lastCommands = new ArrayList<>(history);
+		if (history.size() > SHOW_MAX_HISTORY)
+			lastCommands = history.subList(history.size() - SHOW_MAX_HISTORY, history.size());
+		lastCommands.forEach(command -> System.out.println(command));
 	}
 }

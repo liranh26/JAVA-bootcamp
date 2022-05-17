@@ -1,0 +1,1 @@
+{"MEAT":{"name":"Steak","calories":2500,"label":"MEAT","igredients":[{"name":"steak","weight":1.0},{"name":"pepper","weight":0.1},{"name":"salt","weight":0.1}]},"DAIRY":{"name":"Pizza","calories":2500,"label":"DAIRY","igredients":[{"name":"flour","weight":1.5},{"name":"mozeralla","weight":0.3},{"name":"tomato sauce","weight":0.15}]}}

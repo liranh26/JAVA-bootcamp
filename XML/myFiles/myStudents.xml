@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student id="101">
+		<gender>Male</gender>
+		<firstName>Liran</firstName>
+		<lastName>Hadad</lastName>
+		<note>
+			<to>Guy</to>
+			<from>Liran</from>
+			<body>Java is fun!</body>
+		</note>
+	</student>
+
+	<student id="102">
+		<gender>Female</gender>
+		<firstName>Sapir</firstName>
+		<lastName>Hadad</lastName>
+		<note>
+			<to>Liran</to>
+			<from>SAPIR</from>
+			<body>Hello</body>
+		</note>
+	</student>
+
+	<student id="103">
+		<gender>Male</gender>
+		<firstName>Snir</firstName>
+		<lastName>Hadad</lastName>
+		<note>
+			<to>Sapir</to>
+			<from>Snir</from>
+			<body>Hi there</body>
+		</note>
+		<note>
+			<to>Liran</to>
+			<from>Snir</from>
+			<body>Hi to you too</body>
+		</note>
+	</student>
+
+</students>

@@ -26,7 +26,7 @@ public class EventManager {
     }
 
     public void notify(ReportType reportType, String report) {
-    	reportType.insertReport(report);
+    	reportType.insertReport(report); 
         List<EventListeners> users = listeners.get(reportType);
         for (EventListeners listener : users) {
             listener.update(reportType);
