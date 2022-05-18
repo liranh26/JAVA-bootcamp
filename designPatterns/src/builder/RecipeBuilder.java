@@ -4,9 +4,6 @@ package builder;
  * Unlike other creational patterns, Builder can construct unrelated products,
  * which don't have the common interface.
  *
- * In this case we build a user manual for a car, using the same steps as we
- * built a car. This allows to produce manuals for specific car models,
- * configured with different features.
  */
 public class RecipeBuilder implements Builder{
     private PizzaType type;

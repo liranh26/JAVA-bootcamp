@@ -23,13 +23,16 @@ public class QueryExercise {
 
 			System.out.println("Root element: " + document.getRootElement().getName());
 			Element studentsElement = document.getRootElement();
+			System.out.println("-----------");
+			System.out.println(studentsElement);
 
+			
 			List<Element> studentsList = studentsElement.getChildren();
-			for (Element student : studentsList) {
-				System.out.println("Current student: " + student.getName());
-				students.add(parseStudent(student));
 
-				student.getChild("note").getChildren();
+			for (Element student : studentsList) {
+				System.out.println("Current student: " + student.getAttributeValue("id"));
+				System.out.println("Info from xml:"+student);
+				students.add(parseStudent(student));
 			}
 
 			System.out.println(students);
@@ -50,8 +53,7 @@ public class QueryExercise {
 		String firstName = student.getChild("firstName").getText();
 		String lastName = student.getChild("lastName").getText();
 
-		student.getChild("note");
-		List<Element> notes = student.getChildren();
+		List<Element> notes = student.getChild("notes").getChildren();
 		
 		List<String> studentNotes = new ArrayList<>();
 
