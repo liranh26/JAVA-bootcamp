@@ -46,7 +46,6 @@ public class ScannerInput {
 					System.out.println(ne + "\n Input can't be parsed - Try again");
 				}
 			}
-			// if input is valid calculate division
 			if (success) {
 				return num;
 			}

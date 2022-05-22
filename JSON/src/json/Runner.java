@@ -30,7 +30,7 @@ public class Runner {
 		List<Ingredient> steakIngredients = Arrays.asList(new Ingredient("steak", 1f), new Ingredient("pepper", 0.1f),
 				new Ingredient("salt", 0.1f));
 		Pastry steak = new Pastry("Steak", 2500, PastryLabel.MEAT, steakIngredients);
-
+		
 		ArrayList<Pastry> pastrys = new ArrayList<>();
 		pastrys.add(steak);
 		pastrys.add(pizza);

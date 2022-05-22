@@ -98,7 +98,7 @@ public class AppManager {
 		try (FileReader fileReader = new FileReader(file)) {
 			JsonReader jsonReader = new JsonReader(fileReader);
 		
-		Gson gson = new Gson();
+		Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
 		Type gsonType = new TypeToken<HashMap>(){}.getType();
 		
 		pastrysMap = gson.fromJson(jsonReader, gsonType);
