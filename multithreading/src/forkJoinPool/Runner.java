@@ -42,6 +42,7 @@ public class Runner {
 //	RecursiveTask can return back a value ..
 	static class Recursivevalue extends RecursiveTask<Double> {
 
+		private static final long serialVersionUID = 1L;
 		private static final int NUM_ELEMENTS = 3;
 		private final int left; // indexes of the array
 		private final int right;
@@ -85,6 +86,7 @@ public class Runner {
 	// RecursiveAction extends the ForkJoinPool
 	static class RecursiveIncrementTask extends RecursiveAction {
 
+		private static final long serialVersionUID = 1L;
 		private static final int NUM_ELEMENTS = 3;
 		private final int left; // indexes of the array
 		private final int right;

@@ -1,4 +1,4 @@
-package multithreading.create;
+package multithreading.lesson;
 
 public class Daemon {
 

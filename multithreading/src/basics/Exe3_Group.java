@@ -2,7 +2,7 @@ package basics;
 
 import java.util.ArrayList;
 
-public class Exersice3 {
+public class Exe3_Group {
 
 	static int num = 1;
 	final static int WAITING_TIME = 2000;
@@ -42,6 +42,8 @@ public class Exersice3 {
 				}
 
 			}
+			//The result for num will be zero (for WAITING_TIME = 2000) because the number overflows the integer max value.
+			//If we change WAITING_TIME to value less then 2000.. 1000 we will get a result.
 			System.out.println(Thread.currentThread().getName() + ", num is:" + num);
 		}
 	}

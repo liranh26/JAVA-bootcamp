@@ -1,4 +1,4 @@
-package synchronization.exe2;
+package synchronization.exe2_wait_notify;
 
 import java.util.Queue;
 
@@ -35,7 +35,7 @@ public class Consumer implements Runnable {
 			Thread.sleep(SLEEP_TIME);
 
 
-			System.out.println("Consumed data: " + queue.size());
+			System.out.println(Thread.currentThread().getName() + "Consumed data: " + queue.size());
 			queue.remove();
 
 			// let producer know that the consuming started

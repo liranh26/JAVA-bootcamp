@@ -2,7 +2,7 @@ package basics;
 
 import java.util.ArrayList;
 
-public class Exersice6 {
+public class Exe6_RaceCond_Example {
 
 	private static ArrayList<Integer> intList = new ArrayList<>();
 	private static final int size = 50;
@@ -26,6 +26,7 @@ public class Exersice6 {
 		thread1.join();
 		thread2.join();
 		
+		//Race condition exists here - how to handle it next subject synchronization
 		System.out.println("The sum of the array by using THREADS is: "+sum);
 	}
 

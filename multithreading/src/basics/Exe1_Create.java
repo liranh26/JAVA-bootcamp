@@ -1,6 +1,6 @@
 package basics;
 
-public class Exercise1 {
+public class Exe1_Create {
 
 	static final int NUM_RUNS = 3;
 	static int num = 10;

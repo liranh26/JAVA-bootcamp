@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -36,7 +35,7 @@ public class Runner {
 		try (Scanner sc = new Scanner(file)) {
 
 			while (sc.hasNext()) {
-				String sentence = sc.nextLine();
+				String sentence = sc.nextLine().replaceAll("[.,-,',`,\",:,=]", "");
 				String[] words = sentence.split(" ");
 				pool.submit(new ThreadTask(words, lock, wordsAppearance));
 			}
@@ -68,10 +67,12 @@ public class Runner {
 			this.lock = lock;
 			this.wordsAppearance = wordsAppearance;
 		}
-
+		
+		@Override
 		public void run() {
 			lock.lock();
 			for (String word : words) {
+				
 				if (wordsAppearance.containsKey(word))
 					wordsAppearance.put(word, wordsAppearance.get(word).intValue() + 1);
 				else
@@ -80,40 +81,11 @@ public class Runner {
 			lock.unlock();
 		}
 	}
+	
+//	private static boolean containOnlyChars(String word) {
+//		return word.chars().allMatch(Character::isLetter);
+//	}
 
+	
 }
 
-//		try (Scanner sc = new Scanner(file)) {
-//
-//
-//				pool.execute(() -> {
-//
-//					String sentence = sc.nextLine();
-//					String[] words = sentence.split(" ");
-////				System.out.println(words);
-//
-//					lock.lock();
-//					for (String word : words) {
-//						if (wordsAppearance.containsKey(word))
-//							wordsAppearance.put(word, wordsAppearance.get(word).intValue() + 1);
-//						else
-//							wordsAppearance.put(word, 1);
-//					}
-//					lock.unlock();
-//
-//				});
-//			
-//
-//		} catch (FileNotFoundException e1) {
-//			e1.printStackTrace();
-//		}
-//
-//		System.out.println(wordsAppearance);
-//
-//		pool.shutdown();
-//
-//		try {
-//			pool.awaitTermination(15, TimeUnit.SECONDS);
-//		} catch (InterruptedException e1) {
-//			e1.printStackTrace();
-//		}

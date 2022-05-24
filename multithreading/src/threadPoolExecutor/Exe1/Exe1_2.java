@@ -25,10 +25,12 @@ public class Exe1_2 {
 		public static void main(String[] args) {
 
 			HashMap<String, Integer> wordsAppearance = new HashMap<>();
-			ThreadPoolExecutor pool = new ThreadPoolExecutor(CORE_THREADS, MAX_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS,
+			ThreadPoolExecutor pool = new ThreadPoolExecutor(CORE_THREADS, 
+					MAX_POOL_SIZE, 
+					KEEP_ALIVE_TIME, 
+					TimeUnit.SECONDS,
 					tasks,
-					new ThreadPoolExecutor.CallerRunsPolicy()
-					);
+					new ThreadPoolExecutor.CallerRunsPolicy());
 
 			Lock lock = new ReentrantLock();
 			File file = new File("myFiles/alice.txt");

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Excersice4 {
+public class Exe4_DaemonThread {
 
 	public static void main(String[] args) {
 		// 2 list i=0 - 999 + 1000
@@ -18,7 +18,7 @@ public class Excersice4 {
 
 		list2.set((int) (Math.random() * 1000), -1);
 
-		
+		/*** q4.1 - find a common value O(nlogn) ***/
 		Thread thread1 = new Thread(()->{
 			int i;
 			//assuming that list2 is sorted - if not need to sort before
@@ -31,6 +31,7 @@ public class Excersice4 {
 			}
 			System.out.println(Thread.currentThread().getName()+" didnt find common value.");
 		}, "Common Finder");
+		
 		
 		Thread thread2 = new Thread(new checkNegative(list2), "Negative Finder");
 		

@@ -1,4 +1,4 @@
-package multithreading.create;
+package multithreading.lesson;
 
 public class Runner {
 
@@ -33,22 +33,23 @@ public class Runner {
 				
 			}
 		};
-		Thread thread2 = new Thread( myRunnable);
+		Thread thread2 = new Thread(myRunnable);
 		thread2.start();
 		
-		System.out.println(thread.getName());
 		
 		Thread thread3 = new Thread(()->{
 			for (int i = 0; i < 3; i++) {
 				System.out.println("Hello "+Thread.currentThread().getName());
 			}
 		},"thread3");
+		
 		thread3.start();
 	
 		
 		ThreadGroup group = new ThreadGroup("my group");
 	
-		group.setMaxPriority(4);
+		//the max priority available to define a group is 5
+		group.setMaxPriority(6);
 
 		Thread thd1 = new Thread(group, new PrinterThread(), "printer 1");
 		Thread thd2 = new Thread(group, new PrinterThread(), "printer 2");
@@ -75,8 +76,6 @@ public class Runner {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
-			
 			
 			System.out.println("Hello from "+ Thread.currentThread().getName());
 		}

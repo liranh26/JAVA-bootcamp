@@ -1,4 +1,4 @@
-package synchronization.exe3;
+package synchronization.exe3_lock;
 
 import java.util.ArrayList;
 import java.util.List;

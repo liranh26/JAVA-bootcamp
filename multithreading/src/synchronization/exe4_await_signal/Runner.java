@@ -1,4 +1,4 @@
-package synchronization.exe4;
+package synchronization.exe4_await_signal;
 
 import java.util.LinkedList;
 import java.util.Queue;

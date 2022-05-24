@@ -3,7 +3,7 @@ package basics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Excersice5 {
+public class Exe5_ExceptionHandlers {
 
 	private static final int numIntegers = 1000;
 	private static final int numOfNulls = 3;
@@ -23,7 +23,6 @@ public class Excersice5 {
 		
 		
 		List<Integer> list1 = new ArrayList<>();
-		
 		List<Double> list3 = new ArrayList<>();
 		
 		Thread thread1 = new Thread(()->{
@@ -39,16 +38,17 @@ public class Excersice5 {
 			
 		}, "Thread - doubles int");
 		
-		thread1.start();
 		
-		/*** thread2 ***/
+		
+		/*** thread2 - using Uncaught Exception to catch exception ***/
 		Thread thread2 = new Thread(doubleRunnable, "Thread - Doubles values of list");
 		
 		thread2.setUncaughtExceptionHandler((thread, exception) -> {
 			System.out.println("Something went wrong! "+ exception);
 		});
+		//note - if the there is no setUncaughtExceptionHandler, the next handler to take place in is ThreadGroup object acts as its handler.
 		
-		thread2.start();
+
 		
 		/*** Default Uncaught ExceptionHandler ***/
 		Thread.setDefaultUncaughtExceptionHandler(((thread, exception) -> {
@@ -62,6 +62,9 @@ public class Excersice5 {
 			
 		}, "Thread - doubles int");
 		
+		
+		thread1.start();
+		thread2.start();
 		thread3.start();
 	}
 

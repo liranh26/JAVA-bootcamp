@@ -1,4 +1,4 @@
-package synchronization.exe2;
+package synchronization.exe2_wait_notify;
 
 import java.util.LinkedList;
 import java.util.Queue;
