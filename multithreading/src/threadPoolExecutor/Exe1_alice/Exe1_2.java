@@ -1,4 +1,4 @@
-package threadPoolExecutor.Exe1;
+package threadPoolExecutor.Exe1_alice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -66,7 +66,8 @@ public class Exe1_2 {
 				e1.printStackTrace();
 			}
 			
-			System.out.println(wordsAppearance);
+//			System.out.println(wordsAppearance);
+			wordsAppearance.entrySet().stream().forEach(s -> System.out.println(s.getKey() +" : " + s.getValue()));
 
 		}
 		

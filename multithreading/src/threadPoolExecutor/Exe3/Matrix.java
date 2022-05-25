@@ -54,8 +54,10 @@ public class Matrix {
 	public static Boolean isMatrixSame(Matrix mat1, Matrix mat2) {
 		for (int i = 0; i < mat1.getSize(); i++) {
 			for (int j = 0; j < mat1.getSize(); j++) {
-				if(mat1.matrix[i][j] != mat2.matrix[i][j])
+				if(mat1.matrix[i][j] != mat2.matrix[i][j]) {
+					System.out.println(mat1.matrix[i][j] + " --- " + mat2.matrix[i][j]);
 					return false;
+				}
 			}
 		}
 		return true;

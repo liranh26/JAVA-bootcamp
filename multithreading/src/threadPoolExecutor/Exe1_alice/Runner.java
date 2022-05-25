@@ -1,4 +1,4 @@
-package threadPoolExecutor.Exe1;
+package threadPoolExecutor.Exe1_alice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,7 +35,7 @@ public class Runner {
 		try (Scanner sc = new Scanner(file)) {
 
 			while (sc.hasNext()) {
-				String sentence = sc.nextLine().replaceAll("[.,-,',`,\",:,=]", "");
+				String sentence = sc.nextLine().replaceAll("[.,-,',`,\",:,=,--,(,),;]", "");
 				String[] words = sentence.split(" ");
 				pool.submit(new ThreadTask(words, lock, wordsAppearance));
 			}
@@ -52,7 +52,8 @@ public class Runner {
 			e1.printStackTrace();
 		}
 		
-		System.out.println(wordsAppearance);
+//		System.out.println(wordsAppearance);
+		wordsAppearance.entrySet().stream().forEach(s -> System.out.println(s.getKey() +" : " + s.getValue()));
 
 	}
 

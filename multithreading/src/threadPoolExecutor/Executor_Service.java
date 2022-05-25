@@ -82,7 +82,7 @@ public class Executor_Service {
 		 * it doesnt return a future 
 		 */
 		
-		//10 is the start delay, 1 is fix rate
+		//3 is the start delay, 1 is fix rate
 		scheduledService.scheduleAtFixedRate(()->System.out.println("Java"), 
 				3, 1, TimeUnit.SECONDS);
 		

@@ -87,7 +87,7 @@ public class Runner {
 			e1.printStackTrace();
 		}
 		
-		
+		System.out.println("-----------------------");
 		/******* option 2 use constructor to handle rejected exception *******/
 		ThreadPoolExecutor pool2 = new ThreadPoolExecutor(CORE_THREADS, MAX_POOL_SIZE, KEEP_ALIVE_TIME,
 				TimeUnit.SECONDS, tasks, (Runnable runnable, ThreadPoolExecutor executor) -> { // exception handler
