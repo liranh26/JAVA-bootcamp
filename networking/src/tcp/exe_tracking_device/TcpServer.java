@@ -1,4 +1,4 @@
-package tcp.template;
+package tcp.exe_tracking_device;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,41 +7,56 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class TcpServer {
 
 	public static void main(String[] args) {
-		
+
 		TcpServer server = new TcpServer(8080);
 		server.runServer();
 	}
-	
+
 	private final int PORT;
-	private ServerSocket serverSocket ;
-	private BufferedReader bufferReader ;
-	private PrintWriter writer ;
+	private ServerSocket serverSocket;
+	private BufferedReader bufferReader;
+	private PrintWriter writer;
 	private Socket clientSocket;
-	
+	private HashMap<String, ArrayList<String>> db;
+
 	public TcpServer(int port) {
 		this.PORT = port;
+		db = new HashMap<>();
 	}
-	
+
 	public void runServer() {
-		
+
 		openSocket();
-		
-		while(true) {
+
+		while (true) {
 			connectSocket();
 			openBufferReader();
-			String line = readFromBuffer();
-			
-			sendData("I must have called a thousand times");
-			
+			String trackerInfo = readFromBuffer();
+			String id = getIdFromString(trackerInfo);
+			System.out.println(id);
+
+			insertData(id, trackerInfo);
+			sendData("Data recieved : " + trackerInfo);
+
 		}
-	
-		
 	}
-	
+
+	private void insertData(String id, String trackerInfo) {
+		if (db.containsKey(id))
+			db.get(id).add(trackerInfo);
+		else {
+			ArrayList<String> data = new ArrayList<>();
+			data.add(trackerInfo);
+			db.put(id, data);
+		}
+	}
+
 	private void openSocket() {
 		try {
 			serverSocket = new ServerSocket(PORT);
@@ -51,17 +66,18 @@ public class TcpServer {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void connectSocket() {
 		try {
 			clientSocket = serverSocket.accept();
-			System.out.println("client is connected" + clientSocket.getInetAddress() + ", port: " + clientSocket.getPort());
+			System.out.println(
+					"client is connected" + clientSocket.getInetAddress() + ", port: " + clientSocket.getPort());
 		} catch (IOException e) {
 			System.out.println("Failed to connect to client");
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void openBufferReader() {
 		InputStream inputStream;
 		try {
@@ -74,10 +90,10 @@ public class TcpServer {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private String readFromBuffer() {
-		//reading the data from the stream
-		String line="";
+		// reading the data from the stream
+		String line = "";
 		try {
 			line = bufferReader.readLine();
 			System.out.println("Client says: " + line);
@@ -87,16 +103,23 @@ public class TcpServer {
 		}
 		return line;
 	}
-	
+
 	private void sendData(String data) {
-		//sending data to client 
+		// sending data to client
 		try {
 			writer = new PrintWriter(clientSocket.getOutputStream(), true);
-			writer.println("I must have called a thousand times");
+			writer.println(data);
 		} catch (IOException e) {
 			System.out.println("Failed to send data stream!");
 			e.printStackTrace();
 		}
 	}
-	
+
+	private String getIdFromString(String str) {
+		if (str == null)
+			return "";
+		String[] words = str.split(" ");
+		return words[words.length - 1].replace("]", "");
+	}
+
 }
