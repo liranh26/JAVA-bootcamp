@@ -111,11 +111,7 @@ public class MultiPlayersSimulation {
 						e.printStackTrace();
 					}
 			}
-		}
-			
-		
-		
-		
+		}	
 	}
 	
 }

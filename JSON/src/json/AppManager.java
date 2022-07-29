@@ -112,3 +112,67 @@ public class AppManager {
 	}
 
 }
+
+
+
+
+
+
+//private static class IOTClientRunnable implements Runnable {
+//
+//	private IOTThing thing;
+//
+//	public IOTClientRunnable(IOTThing thing) {
+//		this.thing = thing;
+//	}
+//
+//	@Override
+//	public void run() {
+//
+//		try (Socket clientSocket = new Socket(SERVER_NAME, SERVER_PORT);
+//				BufferedReader bufferReader = new BufferedReader(
+//						new InputStreamReader(clientSocket.getInputStream()));
+//				PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);) {
+//
+//			System.out.println("Connected to server");
+//			
+//			System.out.println(thing);
+//			thing.simulateInventoryChange();
+//			
+//
+//			System.out.println("------> " + thing);
+//			
+//			Gson gson = new Gson();
+//			String thingJson = gson.toJson(thing, IOTThing.class);
+//			
+//			System.out.println(thingJson);
+//			
+//			writer.println(thingJson);
+//
+//			// reading the data from the stream
+//			String line = bufferReader.readLine();
+//			System.out.println("Server says: " + line);
+//			
+//
+//
+//		} catch (UnknownHostException e) {
+//			System.err.println("Server is not found");
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			System.err.println("Socket failed!");
+//			e.printStackTrace();
+//		}
+//	}
+//}
+//
+//private static void sleep(int time) {
+//	try {
+//		Thread.sleep(time);
+//	} catch (InterruptedException e) {
+//		e.printStackTrace();
+//	}
+//}
+
+
+
+
